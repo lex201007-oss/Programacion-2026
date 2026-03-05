@@ -2,18 +2,24 @@
 class Inversion:
   #este es el método constructor que inicializa
   #a los atributos de una clase
+  
   def __init__(self, valor1, valor2, valor3, valor4):
     self.saldo = valor1
     self.rendimiento = valor2
     self.tiempo = valor3
     self.empresa = valor4
+  
   def depositar(self, cantidad):
     self.saldo=self.saldo + cantidad
+  
   def retirar(self, cantidad):
     self.saldo=self.saldo - cantidad
-  #metodo que calcula la ganancia final de la inversion
+ 
+#metodo que calcula la ganancia final de la inversion
+  
   def calcular(self):
       self.capital = self.saldo* self.rendimiento * self.tiempo
+  
   def mostrar(self) :
     print(self.empresa)
 
