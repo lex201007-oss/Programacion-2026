@@ -1,5 +1,5 @@
 # Integrantes del equipo
 
-1-Abraham Alexander Mogica Morales 
+1-Mogica Morales Abraham Alexander  
 
-2-Vania 
+2-Márquez López Vania Aislinn
