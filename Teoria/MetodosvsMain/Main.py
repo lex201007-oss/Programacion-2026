@@ -1,28 +1,29 @@
+from Cuenta import *
+from Menu import *
+
 class Main:
     pass
 
 
-print("*** 1. Imprimimos atributos desde el archivo principal ***")
+menu = Menu("Bienvenidos al Banco Pato")
 
-# Creamos un objeto de la clase Cuenta
+menu.darBienvenida()
+opcion = menu.despliegaMenu()
+
+
 cuenta1 = Cuenta(300, "debito", "12/02/2019")
 
-# Imprimimos atributos directamente
-print(cuenta1.saldo)
-print(cuenta1.tipo)
-print(cuenta1.fechaCreacion)
-
-
-print("\n*** 2. Imprimimos atributos con el método ***")
-
-# Usamos el método de la clase
+print("\nDatos de la cuenta:")
 cuenta1.informacion()
 
 
-print("\n*** 3. Probamos operaciones ***")
+if opcion == "1":
+    cuenta1.depositar(800)
+    print("\nDepósito realizado")
+    cuenta1.informacion()
 
-cuenta1.depositar(200)
-cuenta1.retirar(100)
+elif opcion == "2":
+    cuenta1.retirar(100)
+    print("\nRetiro realizado")
 
-
-cuenta1.informacion()
+    cuenta1.infromacion()
