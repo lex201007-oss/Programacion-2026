@@ -26,5 +26,5 @@ class Inversion:
   def mostrar(self):
        print("Nombre de ka empresa:", self.empresa)
         print("Saldo actual:", self.saldo)
-        print("Rendimiento:", self.Rendimiento)
+        print("Rendimiento:", self.rendimiento)
         print("Tiempo:", self.tiempo, "meses")
