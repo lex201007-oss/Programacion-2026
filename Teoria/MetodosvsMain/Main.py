@@ -11,7 +11,7 @@ menu.darBienvenida()
 opcion = menu.despliegaMenu()
 
 
-cuenta1 = Cuenta(300, "debito", "12/02/2019")
+cuenta1 = Cuenta(300, "debito", "20/10/2007")
 
 print("\nDatos de la cuenta:")
 cuenta1.informacion()
