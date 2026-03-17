@@ -22,6 +22,7 @@ class Cuenta:
   def informacion(self):
     print("Saldo::", self.saldo)
     print("Tipo::", self.tipo)
+    
     print("Fecha de creacion::", self.fechaCreacion)
   
 
