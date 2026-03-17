@@ -1,6 +1,3 @@
-@author: Abraham Alexnader Mogica Morales 
-"""
-from Cuenta import *
 class Main:
     pass
 
@@ -19,7 +16,7 @@ print(cuenta1.fechaCreacion)
 print("\n*** 2. Imprimimos atributos con el método ***")
 
 # Usamos el método de la clase
-cuenta1.imprimirDetalles()
+cuenta1.informacion()
 
 
 print("\n*** 3. Probamos operaciones ***")
@@ -28,4 +25,4 @@ cuenta1.depositar(200)
 cuenta1.retirar(100)
 
 
-cuenta1.imprimirDetalles()
+cuenta1.informacion()
