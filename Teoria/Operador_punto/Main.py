@@ -5,7 +5,7 @@ class Main:
 print("*** 1. Imprimimos atributos desde el archivo principal ***")
 
 # Creamos un objeto de la clase Cuenta
-cuenta1 = Cuenta(300, "debito", "12/02/2019")
+cuenta1 = Cuenta(300, "debito", "20/10/2007")
 
 # Imprimimos atributos directamente
 print(cuenta1.saldo)
