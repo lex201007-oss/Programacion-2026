@@ -1,4 +1,5 @@
 from Inversion import *
+from Cliente_inversion import *
 from Menu import *
 
 menu = Menu("Bienvenido a Inversiones Lex")
