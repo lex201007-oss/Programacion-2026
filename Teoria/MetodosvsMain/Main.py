@@ -1,5 +1,6 @@
 from Cuenta import *
 from Menu import *
+from Cliente import *
 
 class Main:
     pass
