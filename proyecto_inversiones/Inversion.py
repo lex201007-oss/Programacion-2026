@@ -24,7 +24,7 @@ class Inversion:
 
   #mostrar los datos de la inversion
   def mostrar(self):
-        print("Nombre de ka empresa:", self.empresa)
+        print("Nombre de la empresa:", self.empresa)
         print("Saldo actual:", self.saldo)
         print("Rendimiento:", self.rendimiento)
         print("Tiempo:", self.tiempo, "meses")
