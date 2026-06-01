@@ -1,0 +1,2 @@
+class MenuCliente:
+    pass
