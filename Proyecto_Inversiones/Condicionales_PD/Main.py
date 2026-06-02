@@ -1,4 +1,8 @@
-from Menu import Menu
+from Cliente import Cliente
+from Cuenta import Cuenta
 
-menu = Menu()
-menu.mostrar_menu()
+cliente = Cliente("Alexander")
+cuenta = Cuenta(120000)
+
+print(cliente.nombre)
+print(cuenta.clasificar_inversion())
