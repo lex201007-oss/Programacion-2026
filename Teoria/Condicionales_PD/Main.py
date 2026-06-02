@@ -1,4 +1,8 @@
-from Menu import Menu
+from Menu import*
+class Main:
+    pass
 
-menu = Menu()
-menu.mostrar_menu()
+menu = Menu("Bienvenidos al Banco Pato")
+menu.darBienvenida()
+opcion = menu.DespliegaMenu()
+menu.procesaOpcion(opcion)
