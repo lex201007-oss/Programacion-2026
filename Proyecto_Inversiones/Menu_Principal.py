@@ -1,51 +1,121 @@
-import pandas as pd
-from Sistema_Inversiones import Sistema_Inversiones
-from Cliente import Cliente
+from Datos import Datos
+from Cuenta_Ahorro import Cuenta_Ahorro
+from Cuenta_Inversion import Cuenta_Inversion
 
-class Datos:
+class Menu_Principal:
 
-    @staticmethod
-    def guardar(sistema):
+    def __init__(self):
 
-        datos = []
+        self.sistema = Datos.cargar()
 
-        for cliente in sistema.obtener_clientes():
+    def mostrar_menu_principal(self):
 
-            datos.append({
-                "id": cliente.obtener_id(),
-                "nombre": cliente.obtener_nombre(),
-                "direccion": cliente.obtener_direccion(),
-                "fecha_nac": cliente.obtener_fecha_nac()
-            })
+        while True:
 
-        df = pd.DataFrame(datos)
+            print("\n===== SISTEMA DE INVERSIONES =====")
+            print("1. Nuevo Cliente")
+            print("2. Administrar Cuentas")
+            print("3. Mostrar Clientes")
+            print("4. Guardar")
+            print("5. Salir")
 
-        df.to_csv(
-            "clientes.csv",
-            index=False
-        )
+            opcion = input("Opción: ")
 
-    @staticmethod
-    def cargar():
+            if opcion == "1":
 
-        sistema = Sistema_Inversiones()
+                nombre = input("Nombre: ")
+                direccion = input("Dirección: ")
+                fecha = input("Fecha Nacimiento: ")
 
-        try:
-
-            df = pd.read_csv("clientes.csv")
-
-            for _, fila in df.iterrows():
-
-                cliente = Cliente(
-                    fila["id"],
-                    fila["nombre"],
-                    fila["direccion"],
-                    fila["fecha_nac"]
+                cliente = self.sistema.crear_cliente(
+                    nombre,
+                    direccion,
+                    fecha
                 )
 
-                sistema.agregar_cliente(cliente)
+                print(cliente)
 
-        except:
-            pass
+            elif opcion == "2":
 
-        return sistema
+                id_cliente = int(
+                    input("ID Cliente: ")
+                )
+
+                cliente = self.sistema.buscar_cliente(
+                    id_cliente
+                )
+
+                if cliente:
+                    self.menu_cuentas(cliente)
+
+                else:
+                    print("Cliente no encontrado")
+
+            elif opcion == "3":
+
+                for cliente in self.sistema.obtener_clientes():
+                    print(cliente)
+
+            elif opcion == "4":
+
+                Datos.guardar(self.sistema)
+
+                print("Información guardada")
+
+            elif opcion == "5":
+
+                Datos.guardar(self.sistema)
+
+                break
+
+    def menu_cuentas(self, cliente):
+
+        while True:
+
+            print("\n===== CUENTAS =====")
+            print("1. Crear Cuenta Ahorro")
+            print("2. Crear Cuenta Inversión")
+            print("3. Mostrar Cuentas")
+            print("4. Regresar")
+
+            opcion = input("Opción: ")
+
+            if opcion == "1":
+
+                cuenta = Cuenta_Ahorro(
+                    self.sistema.generar_id_cuenta(),
+                    0,
+                    5
+                )
+
+                cliente.agregar_cuenta(cuenta)
+
+                print("Cuenta ahorro creada")
+
+            elif opcion == "2":
+
+                cuenta = Cuenta_Inversion(
+                    self.sistema.generar_id_cuenta(),
+                    0,
+                    12
+                )
+
+                cliente.agregar_cuenta(cuenta)
+
+                print("Cuenta inversión creada")
+
+            elif opcion == "3":
+
+                for cuenta in cliente.obtener_cuentas():
+
+                    print(
+                        "ID:",
+                        cuenta.obtener_id(),
+                        "| Tipo:",
+                        cuenta.obtener_tipo(),
+                        "| Saldo:",
+                        cuenta.obtener_saldo()
+                    )
+
+            elif opcion == "4":
+                break
