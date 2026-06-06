@@ -1,6 +1,7 @@
 class Cliente:
 
     def __init__(self, id_cliente, nombre, direccion, fecha_nac):
+
         self.__id_cliente = id_cliente
         self.__nombre = nombre
         self.__direccion = direccion
@@ -26,4 +27,10 @@ class Cliente:
         self.__cuentas.append(cuenta)
 
     def __str__(self):
-        return f"ID: {self.__id_cliente} | Nombre: {self.__nombre}"
+
+        return f"""
+ID: {self.__id_cliente}
+Nombre: {self.__nombre}
+Dirección: {self.__direccion}
+Fecha Nacimiento: {self.__fecha_nac}
+"""
