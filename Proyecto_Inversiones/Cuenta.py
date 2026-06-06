@@ -1,6 +1,7 @@
 class Cuenta:
 
     def __init__(self, id_cuenta, saldo):
+
         self.__id_cuenta = id_cuenta
         self.__saldo = saldo
 
@@ -22,4 +23,4 @@ class Cuenta:
         return False
 
     def obtener_tipo(self):
-        return "Cuenta"
+        return "General"
